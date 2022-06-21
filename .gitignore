@@ -3,8 +3,10 @@ public/
 pnpm-debug.log*
 .idea/
 
+.deploy_git/
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*

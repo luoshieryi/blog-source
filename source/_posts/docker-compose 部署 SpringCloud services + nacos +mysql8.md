@@ -4,7 +4,7 @@ date: 2022-06-20
 tags: [docker, spring, springcloud, nacos, mysql8]
 ---
 
-# docker-compose 一键部署 SpringCloud services + nacos +mysql8 的疑难杂症
+# docker-compose 一键部署 SpringCloud services + nacos + mysql8 的疑难杂症
 
 ###### about
 

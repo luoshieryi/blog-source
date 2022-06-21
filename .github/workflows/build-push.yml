@@ -49,6 +49,25 @@ jobs:
     - name: Build
       run: pnpm install && pnpm build
 
-    - name: Deploy
+    - name: Deploy - luoshieryi.github.io
       run: pnpm deploy
+
+    - name: Clean - gothic-lolita.moe
+      uses: appleboy/ssh-action@master
+      env:
+        SCRIPT: rm -rf ${{ secrets.NGINX_PATH }}
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        password: ${{ secrets.EC2_PWD }}
+        script: bash -c "$SCRIPT"
+
+    - name: Deploy - gothic-lolita.moe
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        password: ${{ secrets.EC2_PWD }}
+        source: "./public"
+        target: ${{ secrets.NGINX_PATH }}
 
