@@ -50,4 +50,5 @@ jobs:
       run: pnpm install && pnpm build
 
     - name: Deploy
+      run: pnpm deploy
 
