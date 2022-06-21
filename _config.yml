@@ -104,7 +104,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:luoshieryi/gothic-lolita.moe.git
+  repo: git@github.com:luoshieryi/luoshieryi.GitHub.io.git
   branch: master
 
 
