@@ -1,0 +1,36 @@
+name: build-push
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  GIT_USER: luoshieryi
+  GIT_EMAIL: fhaoze@gmail.com
+  SOURCE_REPO: luoshieryi/blog-source
+  DEPLOY_BRANCH: master
+
+jobs:
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node_version }} and pnpm
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+
+    - name: Build and deploy
+      run: pnpm install && pnpm build && pnpm deploy
