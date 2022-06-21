@@ -55,7 +55,7 @@ jobs:
     - name: Rename public
       run: mv public html
 
-    - name: Deploy - gothic-lolita.moe
+    - name: Deploy - gothic-lolita
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
@@ -63,5 +63,5 @@ jobs:
         password: ${{ secrets.EC2_PWD }}
         source: "./public"
         target: ${{ secrets.NGINX_PATH }}
-        rmRemote: true
+        rmRemote: "true"
 
