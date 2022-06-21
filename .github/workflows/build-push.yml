@@ -52,6 +52,16 @@ jobs:
     - name: Deploy - luoshieryi.github.io
       run: pnpm deploy
 
+    - name: Clean - gothic-lolita.moe
+      uses: appleboy/ssh-action@master
+      env:
+        SCRIPT: rm -rf ${{ secrets.NGINX_PATH }}/html
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        password: ${{ secrets.EC2_PWD }}
+        script: bash -c "$SCRIPT"
+
     - name: Rename public
       run: mv public html
 
