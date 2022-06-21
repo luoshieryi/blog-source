@@ -4,7 +4,7 @@ date: 2022-02-27
 tags: [linux, nginx, centos, proxy]
 ---
 
-# Linux下使用Nginx配置正向代理123
+# Linux下使用Nginx配置正向代理
 
 ## 前言
 
