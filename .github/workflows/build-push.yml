@@ -3,6 +3,7 @@ name: build-push
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 env:
   GIT_USER: luoshieryi
