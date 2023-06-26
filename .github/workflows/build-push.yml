@@ -36,7 +36,7 @@ jobs:
       env:
         DEPLOY_TO_GITHUB_PAGE_SSH_KEY: ${{secrets.DEPLOY_TO_GITHUB_PAGE_SSH_KEY}}
       run: |
-        sudo timedatectl set-timezone "Asia/Shanghai"
+        sudo timedatectl set-timezone "Asia/Shanghai"fix
         mkdir -p ~/.ssh/
         echo "$DEPLOY_TO_GITHUB_PAGE_SSH_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_ed25519
