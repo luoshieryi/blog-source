@@ -48,7 +48,7 @@ jobs:
       run: pnpm install && pnpm build
 
     - name: Deploy - luoshieryi.github.io
-      run: pnpm deploy
+      run: pnpm run deploy
 
 #    - name: Clean - gothic-lolita.moe
 #      uses: appleboy/ssh-action@master

@@ -3,7 +3,9 @@ public/
 pnpm-debug.log*
 .idea/
 
+# hexo
 .deploy_git/
+db.json
 
 # Logs
 logs/
