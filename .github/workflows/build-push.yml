@@ -16,8 +16,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [16.x]
-        pnpm-version: [7]
+        node-version: [18.x]
+        pnpm-version: [8]
 
     steps:
     - uses: actions/checkout@v3
@@ -60,16 +60,16 @@ jobs:
 #        password: ${{ secrets.EC2_PWD }}
 #        script: bash -c "$SCRIPT"
 
-    - name: Rename public
-      run: mv public html
-
-    - name: Deploy - gothic-lolita
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        password: ${{ secrets.EC2_PWD }}
-        source: "./html"
-        target: ${{ secrets.NGINX_PATH }}
-        rmRemote: true
+#    - name: Rename public
+#      run: mv public html
+#
+#    - name: Deploy - gothic-lolita
+#      uses: appleboy/scp-action@master
+#      with:
+#        host: ${{ secrets.EC2_HOST }}
+#        username: ${{ secrets.EC2_USER }}
+#        password: ${{ secrets.EC2_PWD }}
+#        source: "./html"
+#        target: ${{ secrets.NGINX_PATH }}
+#        rmRemote: true
 
