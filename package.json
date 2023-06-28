@@ -28,7 +28,7 @@
     "hexo-theme-landscape": "^1.0.0",
     "hexo-util": "^3.0.1",
     "hexo-wordcount": "^6.0.1",
-    "transliteration": "^2.2.0",
+    "transliteration": "^2.3.5",
     "utils-merge": "^1.0.1"
   }
 }
