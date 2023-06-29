@@ -130,6 +130,26 @@ def after_req(resp):
 app.after_request(after_req)
 ```
 
+### 3. 前端代理
+
+通过设置 axios 的 proxy 选项配置前端的代理服务器，所有请求都发送到同域内的前端服务器，再由前端转发给后端
+
+```javascript
+const axios = require('axios');
+
+const instance = axios.create({
+    baseURL: 'http://localhost:3000/',
+    proxy: {
+        host: '127.0.0.1',
+        port: 9000,
+    },
+});
+
+instance.get('/api/users').then(response => {
+    console.log(response.data);
+});
+```
+
 ## Reference
 
 > - flask-github : https://github.com/pallets/flask
